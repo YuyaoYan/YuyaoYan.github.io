@@ -38,7 +38,7 @@
 
 <!-- header -->
 
-	<header id="header-bg-1" style="background-image: url( https://source.unsplash.com/collection/954550/1920x1080 );">	
+	<header id="header-bg-1" style="background-image: url( https://source.unsplash.com/collection/954550/720x360 );">	
 
 	
 		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
@@ -61,7 +61,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		1/14/2019 
+		1/18/2019 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -213,6 +213,9 @@
 <p><code>xxx</code>为<code>xxx.md</code>，执行该操作后产生<code>xxx</code>文件，该文件用来存放<code>xxx.md</code>中的图片。</p>
 <h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><p>参见<a href="https://blog.csdn.net/qq_26975307/article/details/62447489" target="_blank" rel="noopener">大佬博客</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">"我的博客"</span> == hexo new <span class="string">"我的博客"</span> <span class="comment">#新建文章</span></span><br><span class="line">$ hexo p == hexo publish</span><br><span class="line">$ hexo g == hexo generate   <span class="comment">#生成</span></span><br><span class="line">$ hexo s == hexo server     <span class="comment">#启动服务预览</span></span><br><span class="line">$ hexo d == hexo deploy     <span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
+<h3 id="每次部署时依次执行"><a href="#每次部署时依次执行" class="headerlink" title="每次部署时依次执行"></a>每次部署时依次执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>然后在浏览器打开  localhost:4000  看下效果，如果没有问题的话，就执行以下命令，部署到网站。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 					
 				</div>
@@ -315,7 +318,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-text">Deploy to remote sites</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建导航栏文件夹"><span class="post-toc-text">新建导航栏文件夹</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装search"><span class="post-toc-text">安装search</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上传本地图片的插件"><span class="post-toc-text">上传本地图片的插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建-md文档"><span class="post-toc-text">新建.md文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hexo常用命令"><span class="post-toc-text">hexo常用命令</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-text">Deploy to remote sites</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建导航栏文件夹"><span class="post-toc-text">新建导航栏文件夹</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装search"><span class="post-toc-text">安装search</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#上传本地图片的插件"><span class="post-toc-text">上传本地图片的插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建-md文档"><span class="post-toc-text">新建.md文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hexo常用命令"><span class="post-toc-text">hexo常用命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#每次部署时依次执行"><span class="post-toc-text">每次部署时依次执行</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>
