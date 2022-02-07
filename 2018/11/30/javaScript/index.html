@@ -1,0 +1,1475 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<title>JavaScript基础</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content>
+    <meta name="keywords" content>
+    <meta name="description" content>
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-1" style="background-image: url( /img/background.jpg );">	
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto"></p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class=page-name>当前文章&nbsp;:&nbsp;《JavaScript基础》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		2/7/2022 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i  class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="main">main</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="archives">archives</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="tags">tags</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="categories">categories</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="gallery">gallery</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="about">about</a>	
+      		</li>
+    		
+    		
+        	
+            	<li class="fa fa-/search"><a href="javascript:;" class="popup-trigger" title="Search">搜索</a></li>
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/11/30/javaScript/" itemprop="url">		
+			JavaScript基础		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/11/30/javaScript/" itemprop="url">
+	<time datetime="2018-11-29T16:00:00.000Z" itemprop="datePublished">
+  		2018-11-30
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#fontend" title="fontend" rel="3">fontend</a>&nbsp;
+							
+								<a href="#JavaScript" title="JavaScript" rel="1">JavaScript</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<h4 id="7-1"><a href="#7-1" class="headerlink" title="7-1"></a>7-1</h4><p>嵌入JavaScript代码的三种方式</p>
+<ol>
+<li>写在 script 标签中</li>
+<li>直接放在HTML标签中</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.write(<span class="string">'djhfjdf'</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<ol>
+<li>以外部文档的方式连接到当前HTML文档中</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"7-1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>注意事项：</p>
+<ol>
+<li>区分字母的大小写，Name和name是两个不同的标识符。</li>
+<li>空格和换行。这一点和CSS代码规则类似:多余的空格会被忽略，可以将一行代码分成多行写。</li>
+<li>分号作为一个语句的结束标志，分号之后是新语句的开始。虽然省略不写通常也是没有问题的，但还是建议大家写上。</li>
+<li>代码的注释：单行注释和多行注释。</li>
+</ol>
+<h4 id="7-2"><a href="#7-2" class="headerlink" title="7-2"></a>7-2</h4><p>document.write()的常用操作</p>
+<p>document.write(‘矩形的长为：’+b+’,宽为：’+a+’,面积为:’+c+’\n’);</p>
+<ul>
+<li>除了直接输出文字外，它还支持带有HTML标签的输出内容。</li>
+<li>比如直接输出一个标题</li>
+<li>比如在输出内容中加入br换行标签</li>
+<li>比如直接输出列表项……</li>
+<li>……以后再详细介绍，暂时先了解这么多.</li>
+</ul>
+<p>alert()方法</p>
+<ul>
+<li>alert()方法会输出一个对话框，在以后的课程中我们会经常用它进行测试，务必先了解它的用法。</li>
+<li>可以添加多个alert();他们会按照顺序依次执行。</li>
+</ul>
+<p>var x=10;</p>
+<p>alert(x);</p>
+<p>可以验证变量的赋值是否正确</p>
+<p>onclick事件的基本用法</p>
+<ul>
+<li>onclick()事件是最常用的事件之一，所谓事件可以简单理解为用户的操作。</li>
+<li>为了后续课程的学习，你应该先掌握着个简单事件的基本用法</li>
+</ul>
+<h4 id="7-3"><a href="#7-3" class="headerlink" title="7-3"></a>7-3</h4><p>常量</p>
+<ul>
+<li>常量是从始至终不能被改变的数据。比如: 数字 123 可以是常量，字符串 “hello” 也是一个常量……</li>
+<li>常量通常用来表示固定不变的量，比如圆周率，万有引力常量。</li>
+</ul>
+<p>变量</p>
+<ul>
+<li>变量的值是可以改变的，变量可以看做是存储数据的容器。比如一个瓶子，它既可以装入酱油、醋；也可以装入茅台和二锅头……</li>
+<li>在 JavaScript 中创建变量通常称为“声明”变量，使用关键字 var来声明变量。</li>
+<li>向变量赋值，使用等号;可以在声明变量时对其赋值，也可以先声明后赋值。</li>
+<li>可以在一条语句中声明很多变量。该语句以 var 开头，并使用逗号分隔变量即可</li>
+</ul>
+<p>数据类型</p>
+<ul>
+<li>可以使用typeof(变量名)查询数据类型</li>
+<li>数据类型包括:字符串、数字、布尔、数组、对象、Null、Undefined</li>
+<li>数字 number: JavaScript 只有一种数字类型。数字可以带小数点，也可以不带：</li>
+<li>字符串 string:字符串 是存储字符的变量。</li>
+<li>布尔 boolen:只能有两个值：true 或 false。</li>
+<li>数组 array:</li>
+<li>null 空值:可以通过将变量的值设置为 null 来清空变量。</li>
+<li>object: 对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔。</li>
+<li>Undefined 这个值表示变量不含有值或未声明。</li>
+</ul>
+<p>温馨提示：注意事项</p>
+<ul>
+<li>在一个HTML文档使用script标签嵌入多个JS语句的时候，这几个语句之间是相通的,或者说是有关联的。</li>
+<li>命名规范(包括函数名，变量等):</li>
+<li>必须以字母、下划线或者美元符号开始，不能使用特殊符号。</li>
+<li>命名不能是系统的关键字：比如new ,if,class……</li>
+<li>区分大小写</li>
+<li>命名最好用有意义的名称。比如说name,people……</li>
+</ul>
+<h4 id="7-4数据类型"><a href="#7-4数据类型" class="headerlink" title="7-4数据类型"></a>7-4数据类型</h4><p>​       数据类型包括:字符串、数字、布尔、数组、对象、Null、Undefined</p>
+<p>​       关于数据类型的分类，不同书籍的分类方法有所不同，有的划分为复杂数据类型和简单数据类型，也有的划分为原始数据类型和复合数据类型；</p>
+<p>​       有的书籍将函数作为一种特殊的数据类型，有的认为函数不算是数据类型；</p>
+<p>​       本节课程的讲解将重点介绍数值和字符串，要求大家掌握；布尔型的演示涉及的后边章节内容，暂时要求了解；至于数组和对象，暂时先做简要了解，知道即可，将在后续章节做进一步的深入学习。</p>
+<p>typeof运算符 </p>
+<p>typeof运算符可以查询数据类型</p>
+<p>其返回可能值有:undefined,boolean,number,string、object以及function.</p>
+<p>字符串型数据String：字符串是存储字符的变量。</p>
+<p>常量字符串：如 “JavaScript”,’HTML5’ </p>
+<p>变量字符串：如：var text=”HTML5视频教程”</p>
+<p>可以使用”+”进行字符串的连接。</p>
+<p>在JavaScript 中，字符串使用单引号或者双引号来起始或者结束。那么如何输出单引号或者双引号呢？就要用到转义字符</p>
+<p>JavaScript中常用的转义字符</p>
+<p>换行符：\n</p>
+<p>回车符：\r</p>
+<p>退格符:\b</p>
+<p>反斜杠:\</p>
+<p>双引号:\”</p>
+<p>……</p>
+<p>温馨提示：部分转义字符在输出为HTML文档流时不发生作用。</p>
+<p>数值型数据Number：</p>
+<ol>
+<li>JavaScript 只有一种数字类型。数字可以带小数点，也可以不带。</li>
+<li>浮点数值的最高精度是17位小数，但是在进行算术计算时其精度远远不如整数。例如，0.1加0.2的结果不是0.3， 而是0.30000000000000004。这个舍入误差会导致无法测试特定的浮点数值。</li>
+<li>极大或极小的数字可以通过科学（指数）计数法来书写：3e4</li>
+</ol>
+<p>3.14e2就是3.14*100=314</p>
+<ol>
+<li>数字可以写成十进制、八进制、十六进制。</li>
+<li>八进制在js中表示是第一位一定要是0，后面就是八进制字数序列（0~7）</li>
+<li>十六进制字面量前两位必须是0x,后面跟十六进制数字（0~9及A~F）。字母A~F不区分大小写。</li>
+</ol>
+<p>温馨提示：科学（指数）计数法、八进制、十六进制表示的数字在输出时统统会转换成十进制。</p>
+<p>布尔型数据Boolen:</p>
+<ol>
+<li>布尔型数据boolen:只能有两个值：true 或 false。</li>
+</ol>
+<p>var m=3;</p>
+<p>var n=5;</p>
+<p>alert(m&gt;n);   //  function alert(message?: any): void  弹出框显示为：false</p>
+<ol>
+<li>将各种类型的值转化成Boolean类型的规则如下：<ol>
+<li>Number:任意非0的数值为true,0值和NaN为”false”。</li>
+<li>String:所有的非空字符串转化为 true; “”（空字符串）转化成false</li>
+</ol>
+</li>
+</ol>
+<p>if(“…”){</p>
+<p>alert(“布尔值为真”)</p>
+<p>}else{</p>
+<p>alert(“布尔值为假”)</p>
+<p>}</p>
+<ol>
+<li>Object的任何对象都会转化为 true;</li>
+<li>在javascript中，只要逻辑表达式不返回undefined不返回null，就都是真的。</li>
+</ol>
+<p>Undefined</p>
+<ol>
+<li>这是一个很有意思的数据类型，因为它的值只有一个，那就是undefined。</li>
+</ol>
+<p>var m;</p>
+<p>alert(typeof  m)</p>
+<ol>
+<li>在申明变量时如果没有将变量赋值的话这个变量也是属于Undefined类型的。。</li>
+<li>如果一个变量没有申明就直接去访问解释器会报错误信息，但是这样的变量如果使用typeof返回的结果也是”undefined”。</li>
+</ol>
+<p>Null:空值 </p>
+<p>Null也是一个只有一个值得数据类型，它的值就是null，任何变量只要给其赋值为null的话这个变量的数据类型就是Null类型。</p>
+<p>可以通过将变量的值设置为 null 来清空变量。</p>
+<p>对象Object:</p>
+<p>在javascript中，所有的对象都继承自Object对象（数组是特殊的对象，所以数据类型也是object）。</p>
+<p>对象对于初学者来说不是很容易理解，在后续课程中再详细讲解，这里大家先记住有这种数据类型即可。</p>
+<p>// 定义对象，通过.来访问</p>
+<p>var person={name:’Yoyo’,age:’24’,id:’17127907’,VIP:’会员’}</p>
+<p>alert(person.age)</p>
+<p>数组Array:</p>
+<p>可以通过”.”来访问数组的元素。</p>
+<p>数组元素的顺序从0开始</p>
+<p>实例1：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//鸡兔同笼</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> head=<span class="number">35</span>;</span><br><span class="line">    <span class="keyword">var</span> foot=<span class="number">94</span>;</span><br><span class="line">    varchicken=head-(foot<span class="number">-2</span>*head)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">var</span> rabbit=(foot<span class="number">-2</span>*head)/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">'头的数量为:'</span>+head+<span class="string">'&lt;br&gt;'</span>);</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">'脚的数量为:'</span>+foot+<span class="string">'&lt;br&gt;'</span>); </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;input type="button" name=""value="鸡的数量"onclick="document.write('计算鸡的数量为：'+chicken)"/</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">"button"</span> name=<span class="string">""</span>value=<span class="string">"兔的数量"</span>onclick=<span class="string">"alert('计算兔的数量为：'+rabbit)"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="7-10-运算符"><a href="#7-10-运算符" class="headerlink" title="7-10 运算符"></a>7-10 运算符</h4><p>基本概念</p>
+<ol>
+<li>表达式：由常量/变量和运算符组成的短语；</li>
+<li>操作数：表达式中的常量和变量成为操作数；</li>
+<li>运算符：表达式中起运算作用的符合成为运算符；</li>
+<li>单目运算符：只能带一个操作数的成为单目运算符；(也叫一元运算符)</li>
+<li>多目运算符：带多个操作数的成为多目运算符；</li>
+</ol>
+<p>用于字符串的 + 运算符</p>
+<ul>
+<li>+ 运算符用于把文本值或字符串变量加起来（连接起来）。</li>
+<li>要想在两个字符串之间增加空格，需要把空格插入一个字符串之中：</li>
+<li>如果把数字与字符串相加，结果将成为字符串。</li>
+</ul>
+<p>赋值运算符：</p>
+<ul>
+<li>赋值运算符用于给 JavaScript 变量赋值。</li>
+<li>=: x=y</li>
+<li>+= x+=y 等价于 x=x+y</li>
+<li>-= x-=y 等价于 x=x-y</li>
+<li><em>= x</em>=y 等价于 x=x*y</li>
+<li>/= x/=y 等价于 x=x/y</li>
+<li>%= x%=y 等价于 x=x%y</li>
+</ul>
+<p>算术运算符</p>
+<ul>
+<li>加减乘除：+ - * /</li>
+<li>取模运算符：%</li>
+<li>正负运算符：+ -</li>
+<li>递增递减运算符：++ –:使数字递增/递减1(注意前置和后置的区别)</li>
+<li>若没有赋值前置和后置，同。</li>
+<li>若有赋值:前置则先计算递增/减后赋值，后置则相反。</li>
+</ul>
+<p>比较运算符</p>
+<ul>
+<li>比较运算符是比较两个数的大小的运算符，返回的是一个布尔值。</li>
+<li>相等运算符 == ：判断两个操作数是否相等。不同的数据类型会自动转换为相等的数据类型再做比较。</li>
+<li>等同运算符=== ：全等（值和类型），严格意义的相等，两个操作数的值和他们的类型必须完全一致。</li>
+<li>不等于：!=</li>
+<li>不等同运算符： !==</li>
+<li>大于：&gt;</li>
+<li>小于：&lt;</li>
+<li>大于或等于：&gt;=</li>
+<li>小于或等于：&lt;=</li>
+<li>若一个是数值字符串，一个是数值，字符串会自动转换成数值进行比较。</li>
+<li>若两个都是字符串，则比较首个数字的大小。</li>
+<li>字母字符串会转换成对应的ASCII码(较少用到，不做讲解，知道即可)</li>
+<li>布尔值的false和true会转换成0和1</li>
+</ul>
+<p>逻辑运算符</p>
+<ul>
+<li>逻辑运算符用于测定变量或值之间的逻辑。</li>
+<li>&amp;&amp; and(与)</li>
+<li>|| or(或)</li>
+<li>! not(非)</li>
+</ul>
+<p>条件运算符</p>
+<ul>
+<li>根据条件在两个语句中执行其中的一个，使用符号 ？：语法如下：</li>
+<li>条件表达式？语句1：语句2</li>
+<li>参数说明：</li>
+<li>条件表达式，结果会被作为布尔值处理</li>
+<li>语句1：如果条件表达式返回true则执行</li>
+<li>语句2：如果条件表达式返回false则执行</li>
+</ul>
+<p>运算符优先级</p>
+<p>运算符优先级描述了在计算表达式时执行运算的顺序。先执行具有较高优先级的运算，然后执行较低优先级的运算。例如，先执行相乘，再执行相加。</p>
+<ul>
+<li>运算符比较多，可以合理使用()来改变表达式的优先级。</li>
+<li>()的用法和数学中的()用法相同,()内的会优先计算。</li>
+</ul>
+<h4 id="7-15控制语句"><a href="#7-15控制语句" class="headerlink" title="7-15控制语句"></a>7-15控制语句</h4><p>基本概念</p>
+<ul>
+<li>单行语句</li>
+<li>复合语句</li>
+<li>代码块</li>
+<li>复合语句也会被当做一条语句来处理</li>
+</ul>
+<p>if选择语句</p>
+<p>条件语句用于基于不同的条件来执行不同的动作。</p>
+<ul>
+<li>if() 语句 - 只有当指定条件为 true 时，使用该语句来执行代码</li>
+<li>if()…else 语句 - 当条件为 true 时执行代码，当条件为 false 时执行其他代码</li>
+<li>if()…else if()….else 语句 - 使用该语句来选择多个代码块之一来执行</li>
+<li>if语句()中的表达式会自动转换成布尔值。</li>
+</ul>
+<p>switch多条件选择语句</p>
+<p>使用 switch语句来选择要执行的多个代码块之一。</p>
+<p>语法：</p>
+<p>switch(n)</p>
+<p>{</p>
+<p>case 1:</p>
+<p>执行代码块 1</p>
+<p>break;</p>
+<p>case 2:</p>
+<p>执行代码块 2</p>
+<p>break;</p>
+<p>default:</p>
+<p>n 与 case 1 和 case 2不同时执行的代码</p>
+<p>}</p>
+<p>工作原理：首先设置表达式n（通常是一个变量）。</p>
+<p>随后表达式的值会与结构中的每个 case的值做比较。</p>
+<p>如果存在匹配，则与该 case关联的代码块会被执行。</p>
+<p>请使用 break 来阻止代码自动地向下一个case 运行。</p>
+<p>default关键词来规定匹配不存在时做的事情：</p>
+<p>for 循环语句</p>
+<p>在编程中有些指令需要执行很多遍，这时候就要用到循环语句。</p>
+<p>for 循环的语法：</p>
+<p>for (语句 1; 语句 2; 语句 3)</p>
+<p>{</p>
+<p>被执行的代码块</p>
+<p>}</p>
+<p>语句 1 在循环（代码块）开始前执行</p>
+<p>语句 2定义运行循环（代码块）的条件,如果语句 2 返回 true，则循环再次开始，如果返回 false，则循环将结束。</p>
+<p>语句 3 在循环（代码块）已被执行之后执行</p>
+<p>语句 1 是可选的，也就是说不使用语句 1也可以。</p>
+<p>如果您省略了语句 2，那么必须在循环内提供break。否则循环就无法停下来。这样有可能令浏览器崩溃。</p>
+<p>语句 3 也是可选的。</p>
+<p>while循环</p>
+<p>while循环在执行前测试一个条件，如果条件成立进入循环。</p>
+<p>while 循环的语法：</p>
+<p>while(条表达式)</p>
+<p>{</p>
+<p>语句组</p>
+<p>}</p>
+<p>do-while循环</p>
+<p>while循环在执行前测试一个条件，而do-while循环先执行循环，然后再测试条件成立与否。</p>
+<p>while 循环的语法：</p>
+<p>do</p>
+<p>{</p>
+<p>语句组</p>
+<p>}</p>
+<p>while(条表达式)</p>
+<p>break和continue跳转语句</p>
+<p>break将直接跳出并结束当前循环结构。</p>
+<p>continue用于跳过循环中的一个迭代。</p>
+<p>continue语句只能用在循环中；break只能用在循环或 switch 中。</p>
+<p>其他控制语句</p>
+<p>for/in - 循环遍历对象的属性，with、return语句等</p>
+<p>九九乘法表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">7</span>;i++)&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">1</span>;j&lt;=i;j++)&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> str=i+<span class="string">"x"</span>+j+<span class="string">"="</span>+i*j+<span class="string">" "</span>;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.write(str);</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.write(<span class="string">"&lt;br&gt;"</span>);</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>math.floor(x) //返回小于参数x的最大整数，即向下取整</p>
+<h4 id="7-22-函数"><a href="#7-22-函数" class="headerlink" title="7-22 函数"></a>7-22 函数</h4><p>基本概念</p>
+<p>函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。</p>
+<p>JavaScript 函数语法:函数就是包裹在花括号中的代码块：</p>
+<p>function 函数名()</p>
+<p>{</p>
+<p>这里是要执行的代码</p>
+<p>}</p>
+<p>函数的声明和调用：</p>
+<p>使用了关键词 function来声明函数</p>
+<p>关键词function 必须是小写的，并且必须以与函数名称相同的大小写来调用函数。</p>
+<p>函数本身不会自动运行，只有当调用该函数时，才会执行函数内的代码。</p>
+<p>函数可以通过其名字加上括号中的参数进行调用</p>
+<p>可以在某事件发生时直接调用函数（比如当用户点击按钮时），并且可由 JavaScript 在任何位置进行调用。</p>
+<p>在调用函数时，您可以向其传递值，这些值被称为参数。带有参数的函数也被称为有参函数。</p>
+<p>带有返回值的函数:</p>
+<p>有时，我们会希望函数将值返回调用它的地方。通过使用 return 语句就可以实现。</p>
+<p>在使用return 语句时，函数会停止执行，并返回指定的值。</p>
+<p>function hs(){</p>
+<p>return(‘返回值’);</p>
+<p>}</p>
+<p>hs();</p>
+<p>alert(‘可以直接对返回值操作，比如输出它：’+hs());</p>
+<p>可以将返回值赋值给一个变量，然后对变量进行操作</p>
+<p>当函数遇到第一个return后将终止执行函数后边的语句，直接跳出函数</p>
+<p>var a=sum(3,5);</p>
+<p>arguments 对象:</p>
+<p>在函数代码中，使用特殊对象 arguments存储函数调用传递给该函数的所以参数。</p>
+<p>还可以用arguments 对象检测函数的参数个数，引用属性 arguments.length 即可。</p>
+<p>arguments [0]表示函数的第一个参数，arguments [1]表示函数的第二个参数……</p>
+<p>通过arguments可以动态的添加参数。</p>
+<p>实例三：函数在canvas中的应用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"draw()"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"600px"</span> <span class="attr">height</span>=<span class="string">"300px"</span> <span class="attr">style</span>=<span class="string">"border:1pxsolid #c3c3c3;"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> c=<span class="built_in">document</span>.getElementById(<span class="string">"myCanvas"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> cxt=c.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">12</span>;i++)&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">24</span>;j++)&#123;</span></span><br><span class="line"><span class="javascript">                cxt.fillStyle=<span class="string">'rgb(240,'</span>+<span class="built_in">Math</span>.floor(<span class="number">255</span><span class="number">-11.5</span>*i)+<span class="string">','</span>+<span class="built_in">Math</span>.floor(<span class="number">255</span><span class="number">-11.5</span>*j)+<span class="string">')'</span>;</span></span><br><span class="line">                cxt.beginPath();</span><br><span class="line"><span class="javascript">                cxt.arc(<span class="number">12.5</span>+i*<span class="number">25</span>,<span class="number">12.5</span>+j*<span class="number">25</span>,<span class="number">10</span>,<span class="number">0</span>,<span class="built_in">Math</span>.PI*<span class="number">2</span>,<span class="literal">true</span>);</span></span><br><span class="line">                cxt.closePath();</span><br><span class="line">                cxt.fill();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="7-27-对象和数组"><a href="#7-27-对象和数组" class="headerlink" title="7-27 对象和数组"></a>7-27 对象和数组</h4><p>对象:Object </p>
+<ol>
+<li>JavaScript 中的所有事物都是对象：字符串、数值、数组、函数…</li>
+<li>对象是属性的集合，每个属性都有名字和值，对象可以通过属性的名字存取属性的值。</li>
+<li>对象的属性既可以存放基本数据类型也可以存放其他对象的引用值或者函数的引用值，如果存储的是函数的的引用值则该属性称为方法</li>
+<li>对象可以看做带有属性和方法的特殊数据类型。</li>
+<li>对象包含两个基本要素：属性-值，也称作键-值/名-值;当属性值为方法时也称作：属性(字段)和方法(函数)</li>
+<li>对象的创建方法<ol>
+<li>通过new运算符创建</li>
+<li>new关键字可以省略</li>
+<li>属性可以用引号包含也可以不用</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 先创建一个空的对象再赋值</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> peo=<span class="keyword">new</span> <span class="built_in">Object</span>();</span></span><br><span class="line"><span class="javascript">    peo.name=<span class="string">'songjiang'</span>;</span></span><br><span class="line"><span class="javascript">    peo.sex=<span class="string">'man'</span>;</span></span><br><span class="line">    alert(peo.name);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 先创建一个空的对象再赋值</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> peo=&#123;&#125;;</span></span><br><span class="line"><span class="javascript">    peo.name=<span class="string">'songjiang'</span>;</span></span><br><span class="line"><span class="javascript">    peo.sex=<span class="string">'man'</span>;</span></span><br><span class="line">    alert(peo.name);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">//直接对创建的对象赋值</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> peo=&#123;</span></span><br><span class="line"><span class="javascript">    name:<span class="string">'songjiang'</span>，</span></span><br><span class="line"><span class="javascript">    sex:<span class="string">'male'</span></span></span><br><span class="line">    &#125;</span><br><span class="line">    alert(peo.name);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<ol>
+<li>可以用点符号访问对象属性值也可以通过数组的方式，即用[“属性名称”]</li>
+</ol>
+<p>alert(peo[‘name’]);</p>
+<ol>
+<li>可以使用delete运算符删除对象的属性。</li>
+</ol>
+<p>delete peo.name;</p>
+<p>​       //属性值为函数：</p>
+<p>function say(){</p>
+<p>return(‘大师兄’);</p>
+<p>}</p>
+<p>var people={</p>
+<p>sa:say</p>
+<p>}</p>
+<p>alert(people.sa());</p>
+<p>数组:Array</p>
+<p>数组的声明(创建)方法:</p>
+<ol>
+<li>new关键字创建空数组</li>
+<li>new关键字创建包含元素的数组</li>
+<li>new关键字创建指定元素个数的数组</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> arr1=<span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">    <span class="keyword">var</span> arr2=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'apple'</span>,<span class="string">'banana'</span>,<span class="string">'orange'</span>);</span><br><span class="line">    <span class="keyword">var</span> arr3=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">4</span>);</span><br><span class="line">    alert(arr1);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<ol>
+<li>也可以使用[]直接创建数组</li>
+</ol>
+<p>var arr1=[];</p>
+<p>var arr2=[‘apple’,’banana’,’orange’,1];</p>
+<p>var arr3=[];</p>
+<p>arr3[0]=’hha’;</p>
+<p>arr3[1]=’xx’;</p>
+<p>alert(arr3[0]);</p>
+<ol>
+<li>可以使用length属性获取数组的长度;并且可以给一个数组赋值</li>
+</ol>
+<p>alert(arr2.length);</p>
+<p>arr3.length=6;          //给数组赋值长度为6</p>
+<p>数组元素的基本操作</p>
+<p>程序运行时通常需要读取数组中的数据，有时候需要对数据进行修改。</p>
+<ol>
+<li>读取数据：可以使用索引查询获取数组元素和添加数组元素</li>
+<li>添加数据：使用push方法将新元素添加到数组尾部.</li>
+</ol>
+<p>var fruit=new Array(‘苹果’,’putao’);</p>
+<p>fruit.push(‘taozi’);</p>
+<p>document.write(fruit);</p>
+<ol>
+<li>删除数据：可以使用delete运算符删除指定的元素。</li>
+</ol>
+<p>delete fruit[0];</p>
+<ol>
+<li>删除末尾元素(更新数据)pop()方法：该方法会返回删除的元素。</li>
+</ol>
+<p>fruit.pop();</p>
+<p>document.write(fruit.pop());   //打印该函数的返回值，即已删除的元素</p>
+<ol>
+<li>删除顶端的元素 shift方法：</li>
+<li>在数组顶端添加元素 unshift方法：返回值为新数组的长度，但不建议使用，IE会出错。</li>
+<li>字符转换：toString方法将数组表示为字符串。</li>
+</ol>
+<ol>
+<li>join方法输出数组元素。(输出结果会转换成字符串)</li>
+</ol>
+<p>//默认输出时，每个元素会用逗号隔开，jion()可以改变输出时的间隔方式</p>
+<p>var fruit=newArray(‘苹果’,’putao’,’fdf’,’fddgdf’);</p>
+<p>document.write(fruit.join(‘-‘)+’<br>‘);</p>
+<ol>
+<li>数组逆序reverse：颠倒数组元素的顺序;返回值为逆序后的新数组。</li>
+</ol>
+<p>fruit.reverse();</p>
+<ol>
+<li>数组排序 sort：</li>
+</ol>
+<ol>
+<li>语法 数组名.sort(sortfunction)</li>
+</ol>
+<p>//两位数以上的数组元素会出错</p>
+<ol>
+<li>sortfunction若省略，默认为从按照ASII字符顺序进行升序排列</li>
+<li>sortfunction必须返回：正值、零、负值三者之一。赋值表示第一个值大于第二个值，负值反之，零则相等。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruit=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'1'</span>,<span class="string">'36'</span>,<span class="string">'21'</span>,<span class="string">'88'</span>);</span><br><span class="line"><span class="built_in">document</span>.write(fruit+<span class="string">'&lt;br&gt;'</span>);</span><br><span class="line">fruit.sort(sortFunction);</span><br><span class="line"><span class="built_in">document</span>.write(fruit+<span class="string">'&lt;br&gt;'</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortFunction</span>(<span class="params">ar1,ar2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(ar1&gt;ar2)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(ar1&lt;ar2)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<ol>
+<li>扩充数组 concat:将多个数组的元素合并为一个新的数组。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruit=fruit1.concat(fruit2)</span><br><span class="line"><span class="built_in">document</span>.write(fruit+<span class="string">'&lt;br&gt;'</span>)</span><br><span class="line"><span class="comment">//参数也可以是元素：</span></span><br><span class="line"><span class="keyword">var</span> fruit=fruit1.concat(<span class="string">'apples'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>splice方法：删除、替换、插入元素 </p>
+<ol>
+<li><ol>
+<li>会更改原数组</li>
+<li>第一参数为起始位置索引</li>
+<li>第二参数为切取元素个数</li>
+<li>第三个参数为插入元素，可选项</li>
+</ol>
+</li>
+</ol>
+<p>切取数组的一段元素 slice：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var fruit1=new Array('苹果','苹果','苹果','苹果');</span><br><span class="line">document.write(fruit1+'<span class="tag">&lt;/<span class="name">br</span>&gt;</span>');</span><br><span class="line">var fruit2=fruit1.splice(1,2,'葡萄','梨');</span><br><span class="line">//varfruit2=fruit1.splice(1,2);</span><br><span class="line">document.write(fruit1+'<span class="tag">&lt;/<span class="name">br</span>&gt;</span>');</span><br><span class="line">document.write(fruit2+'<span class="tag">&lt;/<span class="name">br</span>&gt;</span>');</span><br><span class="line">//splice的返回值是被替换的元素，返回类型是object，即返回的两个元素新构成的数组的类型</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<ol>
+<li><ol>
+<li>切取部分作为新数组返回，不会对原数组改变。</li>
+<li>第一参数为起始位置索引</li>
+<li>第二参数为结束位置索引，注意区分splice</li>
+<li>若省略第二个参数则直接切取到结尾</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruit1=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'苹果1'</span>,<span class="string">'苹果2'</span>,<span class="string">'苹果3'</span>,<span class="string">'苹果4'</span>,<span class="string">'苹果5'</span>,<span class="string">'苹果6'</span>,<span class="string">'苹果7'</span>,<span class="string">'苹果8'</span>);</span><br><span class="line"><span class="built_in">document</span>.write(fruit1+<span class="string">'&lt;/br&gt;'</span>);</span><br><span class="line"><span class="keyword">var</span> fruit2=fruit1.slice(<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line"><span class="built_in">document</span>.write(fruit1+<span class="string">'&lt;/br&gt;'</span>);</span><br><span class="line"><span class="built_in">document</span>.write(fruit2+<span class="string">'&lt;/br&gt;'</span>);</span><br><span class="line"><span class="comment">//切取1-4，不包括4.slice不对原参数操作，返回切取出来的值；但splice对原数组进行操作，返回切取的值</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>in 运算符和for in循环语句</p>
+<ul>
+<li>in 运算符用来检测对象中是否具有某一特定属性，通常用于遍历集合中的所有元素。</li>
+<li>通常我们使用for/in 语句循环遍历对象的属性，在数组中可以遍历数组中的所有元素。</li>
+</ul>
+<p>//for in循环在对象中的应用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=&#123;<span class="attr">name</span>:<span class="string">"张三"</span>,<span class="attr">age</span>:<span class="number">25</span>,<span class="attr">ID</span>:<span class="number">12345</span>&#125;</span><br><span class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> person)&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">'&lt;li&gt;'</span>+person[x]+<span class="string">'&lt;br&gt;'</span>) <span class="comment">//输出属性值</span></span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">'&lt;li&gt;'</span>+x+<span class="string">'&lt;br&gt;'</span>) <span class="comment">//输出属性</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="阶段练习"><a href="#阶段练习" class="headerlink" title="阶段练习"></a>阶段练习</h4><p>n!</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n=<span class="number">4</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rrr</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> rrr(n<span class="number">-1</span>)*n;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">document</span>.write(rrr(n));</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>回文</p>
+<p>Math.floor()可对浮点数取整</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>var i,a,b,c,d; var ss=new Array(); function aa(){     for(i=10;i&lt;=9999;i++){         d=i%10;         c=Math.floor((i/10)%10);         b=Math.floor((i/100)%10);         a=Math.floor((i/1000)%10);</p>
+<p>​        if((a==d&amp;&amp;b==c&amp;&amp;a!=0)||(a==0&amp;&amp;b==d)||(a==0&amp;&amp;b==0&amp;&amp;c==d)){             ss.push(i);         }     } } aa(); alert(ss.length); document.write(ss+’<br>‘);</p>
+<h4 id="7-35-时间和日期"><a href="#7-35-时间和日期" class="headerlink" title="7-35 时间和日期"></a>7-35 时间和日期</h4><p>基本概念</p>
+<p>Date是JavaScript的内置对象，系统在Date对象中封装了与日期和时间相关的属性和方法。</p>
+<p>Date使用UTC1970年1月1日0时开始经过的毫秒数来存储时间。</p>
+<p>GMT 格林尼治时间</p>
+<p>UTC 国际协调时间</p>
+<p>创建Date对象四种方法：</p>
+<ul>
+<li>var date= new Date();<ul>
+<li>无参数的情况下返回值为当前时间。</li>
+<li>不同浏览器显示的时间格式会有细微差异</li>
+</ul>
+</li>
+<li>var date = new Date(milliseconds);</li>
+<li>var date = new Date(dateString);</li>
+<li>var date = new Date(year, month, day, hours, minutes, seconds, milliseconds);</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date1=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> date2=<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">21212645615312</span>);</span><br><span class="line"><span class="keyword">var</span> date3=<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2012</span>,<span class="number">1</span>,<span class="number">24</span>);</span><br><span class="line"><span class="keyword">var</span> date4=<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2012</span>,<span class="number">1</span>,<span class="number">24</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>时间相关的两个方法(这两种方法了解一下就可以了)：</p>
+<ul>
+<li>Date.parse()返回1970年1月1日午夜到指定日期（字符串）的毫秒数。</li>
+<li>Date.parse()参数支持的时间格式如下：</li>
+</ul>
+<p>1/24/2016;</p>
+<p>January 24,2016；</p>
+<p>SunJan 24 2016 10:10:10 GMT+0800</p>
+<p>格式不正确会返回NaN</p>
+<ul>
+<li>Date.UTC()根据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数。</li>
+<li>Date.UTC()参数支持的时间格式如下：</li>
+</ul>
+<p>2016,1(前两个参数是必须的);</p>
+<p>2016,1,24,10,10,10</p>
+<p>数值含义为年/月/日/时/分/秒；格式不正确会返回NaN</p>
+<p>月份和日期是从0开始</p>
+<p>注意UTC时间和时区的换算，如东八区和标准时间是八小时时差</p>
+<p>Date实例相关的字符串表示方法(了解即可)：</p>
+<ul>
+<li>toSting()获取Date实例的字符串表示</li>
+<li>toDateSting()获取Dater的日期部分字符串表示</li>
+<li>toTimeSting()获取Dater的时间部分字符串表示</li>
+<li>toLocaleString() 据本地时间格式，把 Date 对象转换为字符串。</li>
+<li>toLocaleDateString() 根据本地时间格式，把 Date 对象的日期部分转换为字符串。</li>
+<li>toLocaleTimeString() 根据本地时间格式，把 Date 对象的时间部分转换为字符串。</li>
+<li>valueOf():转换为毫秒数</li>
+</ul>
+<p>Date 对象方法</p>
+<p>通过使用针对日期对象的方法，我们可以很容易地对日期进行操作。重点掌握蓝色字体的内容，其他了解即可。</p>
+<ul>
+<li>getDate() 从 Date 对象返回一个月中的某一天 (1 ~ 31)。</li>
+<li>getDay() 从 Date 对象返回一周中的某一天 (0 ~ 6)。</li>
+<li>getFullYear() 从 Date 对象以四位数字返回年份。</li>
+<li>getHours() 返回 Date 对象的小时 (0 ~ 23)。</li>
+<li>getMilliseconds() 返回 Date 对象的毫秒(0 ~ 999)。</li>
+<li>getMinutes() 返回 Date 对象的分钟 (0 ~ 59)。</li>
+<li>getMonth() 从 Date 对象返回月份 (0 ~ 11)。</li>
+<li>getSeconds() 返回 Date 对象的秒数 (0 ~ 59)。</li>
+<li><p>getTime() 返回 1970 年 1 月 1 日至今的毫秒数。</p>
+</li>
+<li><p>getTimezoneOffset() 返回本地时间与格林威治标准时间 (GMT) 的分钟差</p>
+</li>
+<li>getUTCDate() 根据世界时从 Date 对象返回月中的一天 (1 ~ 31)。</li>
+<li>getUTCDay() 根据世界时从 Date 对象返回周中的一天 (0 ~ 6)。</li>
+<li>getUTCFullYear() 根据世界时从 Date 对象返回四位数的年份。</li>
+<li>getUTCHours() 根据世界时返回 Date 对象的小时 (0 ~ 23)。</li>
+<li>getUTCMilliseconds() 根据世界时返回 Date 对象的毫秒(0 ~ 999)。</li>
+<li>getUTCMinutes() 根据世界时返回 Date 对象的分钟 (0 ~ 59)。</li>
+<li>getUTCMonth() 根据世界时从 Date 对象返回月份 (0 ~ 11)。</li>
+<li>getUTCSeconds() 根据世界时返回 Date 对象的秒钟 (0 ~ 59)。</li>
+<li><p>parse() 返回1970年1月1日午夜到指定日期（字符串）的毫秒数。</p>
+</li>
+<li><p>setDate() 设置 Date 对象中月的某一天 (1 ~ 31)。</p>
+</li>
+<li>setFullYear() 设置 Date 对象中的年份（四位数字）。</li>
+<li>setHours() 设置 Date 对象中的小时 (0 ~ 23)。</li>
+<li>setMilliseconds() 设置 Date 对象中的毫秒 (0 ~ 999)。</li>
+<li>setMinutes() 设置 Date 对象中的分钟 (0 ~ 59)。</li>
+<li>setMonth() 设置 Date 对象中月份 (0 ~ 11)。</li>
+<li>setSeconds() 设置 Date 对象中的秒钟 (0 ~ 59)。</li>
+<li><p>setTime() setTime() 方法以毫秒设置 Date 对象。</p>
+</li>
+<li><p>setUTCDate() 根据世界时设置 Date 对象中月份的一天 (1 ~ 31)。</p>
+</li>
+<li>setUTCFullYear() 根据世界时设置 Date 对象中的年份（四位数字）。</li>
+<li>setUTCHours() 根据世界时设置 Date 对象中的小时 (0 ~ 23)。</li>
+<li>setUTCMilliseconds() 根据世界时设置 Date 对象中的毫秒 (0 ~ 999)。</li>
+<li>setUTCMinutes() 根据世界时设置 Date 对象中的分钟 (0 ~ 59)。</li>
+<li>setUTCMonth() 根据世界时设置 Date 对象中的月份 (0 ~ 11)。</li>
+<li>setUTCSeconds() setUTCSeconds() 方法用于根据世界时 (UTC) 设置指定时间的秒字段。</li>
+<li>toDateString() 把 Date 对象的日期部分转换为字符串。</li>
+<li>toGMTString() 已废弃。请使用 toUTCString() 方法代替。</li>
+<li>toISOString() 使用 ISO 标准返回字符串的日期格式。</li>
+<li>toJSON() 以 JSON 数据格式返回日期字符串。</li>
+<li>toLocaleDateString() 根据本地时间格式，把 Date 对象的日期部分转换为字符串。</li>
+<li>toLocaleTimeString() 根据本地时间格式，把 Date 对象的时间部分转换为字符串。</li>
+<li>toLocaleString() 据本地时间格式，把 Date 对象转换为字符串。</li>
+<li>toString() 把 Date 对象转换为字符串。</li>
+<li>toTimeString() 把 Date 对象的时间部分转换为字符串。</li>
+<li>toUTCString() 根据世界时，把 Date 对象转换为字符串。</li>
+<li>UTC() 根据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数。</li>
+<li>valueOf() 返回 Date 对象的原始值。</li>
+</ul>
+<h4 id="7-38-Math对象"><a href="#7-38-Math对象" class="headerlink" title="7-38 Math对象"></a>7-38 Math对象</h4><p>Math 对象</p>
+<p>Math 对象用于执行数学任务。</p>
+<p>Math 对象并不像 Date 和 String 那样是对象的类，因此没有构造函数 Math()。</p>
+<p>算数值</p>
+<p>JavaScript提供 8 种可被 Math 对象访问的算数值：</p>
+<ul>
+<li>Math.PI 返回圆周率（约等于3.14159）。</li>
+<li>Math.E 返回算术常量 e，即自然对数的底数（约等于2.718）。</li>
+<li>Math.SQRT2 返回 2 的平方根（约等于 1.414）。</li>
+<li>Math.SQRT1_2 返回返回 1/2 的平方根（约等于 0.707）。</li>
+<li>Math.LN2 返回 2 的自然对数（约等于0.693）。</li>
+<li>Math.LN10 返回 10 的自然对数（约等于2.302）。</li>
+<li>Math.LOG2E 返回以 2 为底的 e 的对数（约等于 1.443）。</li>
+<li>Math.LOG10E 返回以 10 为底的 e 的对数（约等于0.434）。</li>
+</ul>
+<p>数值取整</p>
+<ul>
+<li>ceil(x) 对数进行上舍入。</li>
+<li>floor(x) 对数进行下舍入。</li>
+<li>round(x) 把数四舍五入为最接近的整数。</li>
+</ul>
+<p>随机数</p>
+<ul>
+<li>random() 返回 0 ~ 1 之间的随机数。</li>
+</ul>
+<p>注意并不包括0和1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//返回1-10,包括10</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>+<span class="number">1</span>)+<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//返回2-10,包括10</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">9</span>+<span class="number">2</span>)+<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selec</span>(<span class="params">low,high</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ch=high-low+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*ch+low);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">document</span>.write(selec(<span class="number">49</span>,<span class="number">88</span>)+<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>三角函数</p>
+<ul>
+<li>cos(x) 返回数的余弦。</li>
+</ul>
+<p>alert(Math.cos(Math.PI/3));    //cos(这里是弧度)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">Math</span>.cos(<span class="built_in">Math</span>.PI/<span class="number">3</span>));    <span class="comment">//cos(这里是弧度)</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<ul>
+<li>acos(x) 返回 x 的反余弦值。</li>
+<li>sin(x) 返回数的正弦。</li>
+<li>asin(x) 返回 x 的反正弦值。</li>
+<li>tan(x) 返回角的正切。</li>
+<li>atan(x) 以介于 -PI/2 与 PI/2 弧度之间的数值来返回 x 的反正切值。</li>
+</ul>
+<p>其他方法</p>
+<ul>
+<li><p>max(x,y) 返回 x 和 y 中的最高值。</p>
+</li>
+<li><p>min(x,y) 返回 x 和 y 中的最低值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n=<span class="built_in">Math</span>.min(<span class="number">1</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<ul>
+<li>abs(x) 返回 x 的绝对值。</li>
+<li>atan2(y,x) 返回从 x 轴到点 (x,y) 的角度（介于 -PI/2 与 PI/2 弧度之间）。</li>
+<li>exp(x) 返回 e 的指数。</li>
+<li>log(x) 返回数的自然对数（底为e）。</li>
+<li>pow(x,y) 返回 x 的 y 次幂。</li>
+<li>valueOf() 返回 Math 对象的原始值。</li>
+</ul>
+<h4 id="7-40-字符串对象"><a href="#7-40-字符串对象" class="headerlink" title="7-40  字符串对象"></a>7-40  字符串对象</h4><p>字符串对象</p>
+<ol>
+<li>字符串是非常重要的数据类型，除了基本字符串外，JavaScript还提供了字符串的引用类型–字符串对象。</li>
+<li>字符串对象提供了字符串检索、替换、连接等方法…</li>
+<li>可以通过new 关键字创建字符串对象</li>
+</ol>
+<p>var str=new String()</p>
+<ol>
+<li>length 属性返回字符串的长度(字符数)。</li>
+</ol>
+<p>字符串与数字的转换</p>
+<ol>
+<li>toString() 返回字符串。可以将数值转换成字符串。</li>
+<li>如果需要获取数值的二进制、八进制、十六进制的字符串表示，则可以给toString()传递一个表示进制的的整数</li>
+<li>parseInt()函数可以将字符串转换成整数</li>
+<li>parseFloat()函数可以将字符串转换浮点数</li>
+<li>Number()函数可以将任意类型的值转换数值。</li>
+</ol>
+<p>字符串对象的常用方法</p>
+<ol>
+<li>charAt() 返回在指定位置的字符。</li>
+<li>charCodeAt() 返回在指定的位置的字符的 Unicode 编码。</li>
+<li>concat() 连接字符串。</li>
+<li>slice(n,m) 提取字符串n到m之间的片断(不包括m位置的字符串)，并在新的字符串中返回被提取的部分。</li>
+<li>substring() 提取字符串中两个指定的索引号之间的字符。大多数情况和上一个作用相同，当参数为负值时会有不同，但这种情况较少用，不做讨论，有兴趣的话自己测试或查下资料</li>
+<li>substr(n,m) 从起始索引号提取字符串中指定数目的字符。</li>
+<li>split() 把字符串分割为字符串数组。</li>
+<li>indexOf() 检索字符串,返回某个指定的字符串值在字符串中首次出现的位置。注意，如果查找不到会返回 -1</li>
+</ol>
+<p>lastIndexOf() 从后向前搜索字符串。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str1="hello";</span><br><span class="line">var s1=str1.indexOf('a')</span><br><span class="line">alert(s1)</span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>lastIndexOf() 从后向前搜索字符串。</p>
+<ol>
+<li>toLowerCase() 把字符串转换为小写。</li>
+<li>toUpperCase() 把字符串转换为大写。</li>
+<li>match() 找到一个或多个正则表达式的匹配。(正则表达式后续课程会讲)</li>
+</ol>
+<p>该方法会返回一个数组，数组中包含了所有符合条件的文本。无则返回null</p>
+<ol>
+<li>replace() 替换与正则表达式匹配的子串，并返回替换后的字符串，注意原字符串不会改变</li>
+<li>search() 检索与正则表达式相匹配的值。查找与参数模式相匹配的文本，并返回该文本的位置。若无则返回-1(indexOf()会返回-1).与indexOf()相似。</li>
+<li>split() 把字符串分割为字符串数组。</li>
+<li>……</li>
+</ol>
+<p>需要注意的是，JavaScript 的字符串是不可变的（immutable），String 类定义的方法都不能改变字符串的内容。像String.toUpperCase() 这样的方法，返回的是全新的字符串，而不是修改原始字符串。</p>
+<h4 id="阶段练习-1"><a href="#阶段练习-1" class="headerlink" title="阶段练习"></a>阶段练习</h4><p>随机背景颜色：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> colors=[<span class="string">'red'</span>,<span class="string">'blue'</span>,<span class="string">'yellow'</span>,<span class="string">'purple'</span>,<span class="string">'orange'</span>]</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">acolor</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> c=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">5</span>)</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.bgColor=colors[c]</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span><span class="attr">value</span>=<span class="string">"更换背景颜色"</span><span class="attr">onclick</span>=<span class="string">"acolor()"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+    	<li class="am-pagination-prev">
+   		<a class="pull-left" href="/2018/11/30/css/" title="CSS">
+      		&laquo; 上一篇
+		</a>
+		</li>
+	
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/11/29/hexoQuickStart/" title="Hexo Quick Start">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-1"><span class="post-toc-text">7-1</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-2"><span class="post-toc-text">7-2</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-3"><span class="post-toc-text">7-3</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-4数据类型"><span class="post-toc-text">7-4数据类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-10-运算符"><span class="post-toc-text">7-10 运算符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-15控制语句"><span class="post-toc-text">7-15控制语句</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-22-函数"><span class="post-toc-text">7-22 函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-27-对象和数组"><span class="post-toc-text">7-27 对象和数组</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#阶段练习"><span class="post-toc-text">阶段练习</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-35-时间和日期"><span class="post-toc-text">7-35 时间和日期</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-38-Math对象"><span class="post-toc-text">7-38 Math对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-40-字符串对象"><span class="post-toc-text">7-40  字符串对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#阶段练习-1"><span class="post-toc-text">阶段练习</span></a></li></ol>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="https://github.com/YuyaoYan" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/YuyaoYan" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+					
+				
+					<a href="/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+						
+				
+		</div>
+	</div>
+
+	<div  class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2022, content by Yan Yoyo. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"Microsoft YaHei","KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+	<div class="popup search-popup local-search-popup">
+    <span class="popup-btn-close">
+      ESC
+    </span>
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+
+        <div class="local-search-header clearfix">
+            <span class="search-icon"></span>
+            <div class="local-search-input-wrapper">
+              <input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+            </div>
+        </div>
+
+        <div id="local-search-result"></div>
+
+      </div>
+    </div>
+</div>
+
+<script src="/js/ziploader.js"></script>
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // get search zip version
+    $.get('/searchVersion.txt?t=' + (+new Date()), function(res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson () {
+      initLoad(['/search.zip'], {
+        loadOptions: {
+          success: function(obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function(e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions:{
+          'json':'application/json'
+        }
+      })
+    }
+
+    // search function;
+    var searchFunc = function(search_id, content_id) {
+      'use strict';
+
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function() {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function(data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title ? data.title.trim() : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content ? data.content.trim().replace(/<[^>]+>/g,"") : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function(keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0, position = [], index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+
+            // show search results
+
+            if (isMatch) {
+              // sort index by position of keyword
+
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+
+              // merge hits into slices
+
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+
+                  // move to next position of hit
+
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {
+                  hits: hits,
+                  start: start,
+                  end: end,
+                  searchTextCount: searchTextCountInSlice
+                };
+              }
+
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if(start < 0){
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if(end > content.length){
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+
+              // sort slices in content by search text's count and hits' count
+
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+
+              // select top N slices in content
+
+              var upperBound = parseInt('-1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              // highlight title and content
+
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+
+              var resultItem = '';
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+              } else {
+                resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+              }
+
+              slicesOfContent.forEach(function (slice) {
+                resultItem +=  "<p class=\"search-result\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+
+              resultItem += "</li>";
+              resultItems.push({
+                item: resultItem,
+                searchTextCount: searchTextCount,
+                hitCount: hitCount,
+                id: resultItems.length
+              });
+            }
+          })
+        };
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /> no result </div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<ul class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</ul>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // remove loading animation
+      $('body').css('overflow', '');
+
+      proceedsearch();
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        $('.sb-close').click();
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+	<script type="text/javascript" src="/js/love.js"></script>
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+
