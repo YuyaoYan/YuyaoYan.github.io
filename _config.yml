@@ -89,7 +89,7 @@ theme: Annie
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:YuyaoYan/YuyaoYan.github.io.git
+  repo: https://github.com/YuyaoYan/YuyaoYan.github.io.git
   branch: master
 
 # search
