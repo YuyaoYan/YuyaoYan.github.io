@@ -95,6 +95,8 @@ hexo d
 ```
 
 
+> FYI: 在blog-archive分支上进行部署操作和提交代码操作即可。
+
 
 
 

@@ -69,4 +69,4 @@ cover: /img/post-cover/wine.png
 ![图](Images/white5Lone-2.png)
 ![图](Images/white5Lone-3.png)
 ![图](Images/white5Lone-4.png)
-![图](Images/white5Lone-1.png)
+![图](Images/white5Lone-5.png)
